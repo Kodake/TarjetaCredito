@@ -1,0 +1,24 @@
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Titular</th>
+            <th>Número Tarjeta</th>
+            <th>Fecha Expiración</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tarjeta of tarjetaService.list">
+            <td>{{ tarjeta.titular }}</td>
+            <td>{{ tarjeta.numeroTarjeta }}</td>
+            <td>{{ tarjeta.fechaExpiracion }}</td>
+            <td>
+                <i class="far fa-edit fa-lg text-warning" (click)="editar(tarjeta)" style="cursor: pointer;"></i>
+            </td>
+            <td>
+                <i class="far fa-trash-alt fa-lg text-danger" (click)="eliminarTarjeta(tarjeta.id)" style="cursor: pointer;"></i>
+            </td>
+        </tr>
+    </tbody>
+</table>
